@@ -3,7 +3,7 @@ var postDeployCommand = "yarn && cd /var/www/find-jobs/source/client && yarn && 
 module.exports = {
     apps: [{
         name: "worker",
-        script: "./worker/tasks/index.js",
+        script: "./worker/index.js",
         watch: true,
         env: {
             "NODE_ENV": "development",
