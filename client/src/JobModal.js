@@ -14,7 +14,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   });
 
   export default function JobModal({job,  open, handleClose}) {
-    
+
     if (!job.title) {
         return <div />
     }
@@ -30,17 +30,12 @@ const Transition = React.forwardRef(function Transition(props, ref) {
           aria-describedby="alert-dialog-slide-description"
         >
           <DialogTitle id="alert-dialog-slide-title">
-            {job.title} - 
+            {job.title} -
             {job.company}
-            <img className={'detail-logo'} src={job.company_logo} />
+            <img className={'detail-logo'} alt='' src={job.company_logo} />
           </DialogTitle>
           <DialogContent>
-            <DialogContentText 
-                id="alert-dialog-slide-description"
-            >
-              <Chip size="small" label={`from ${job.source}`} />
-            </DialogContentText>
-            <DialogContentText 
+            <DialogContentText
                 id="alert-dialog-slide-description"
                 dangerouslySetInnerHTML={{__html: job.description}}
             />
@@ -49,7 +44,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
             <Button onClick={handleClose} color="primary">
               Close
             </Button>
-            <a href={job.url} target="_blank">
+            <a href={job.url} rel="noopener noreferrer" target="_blank">
                 <Button color="primary">
                 Apply
                 </Button>
