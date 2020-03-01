@@ -1,4 +1,4 @@
-var postDeployCommand = "yarn && cd /var/www/find-jobs/source/client && yarn run build && pm2 startOrRestart ecosystem.config.js --env production";
+var postDeployCommand = "yarn && cd /var/www/find-jobs/source/client && yarn && yarn run build && pm2 startOrRestart ecosystem.config.js --env production";
 
 module.exports = {
     apps: [{
