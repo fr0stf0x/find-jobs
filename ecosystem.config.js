@@ -14,11 +14,11 @@ module.exports = {
     }, {
         name: "api-app",
         script: "./api/index.js",
-        instances: 4,
+        instances: 2,
         exec_mode: "cluster"
     }, {
         name: "react-app",
-        script: "serve -- -s build",
+        script: "serve -- -s client/build",
         exec_mode: "fork"
     }],
     "deploy": {
