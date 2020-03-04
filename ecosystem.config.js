@@ -18,7 +18,7 @@ module.exports = {
         exec_mode: "cluster"
     }, {
         name: "react-app",
-        script: "serve -- -s client/build/",
+        script: "serve -s client/build",
         exec_mode: "fork"
     }],
     "deploy": {
