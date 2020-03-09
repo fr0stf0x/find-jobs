@@ -23,7 +23,7 @@ export default function Jobs({jobs}) {
     const [selectedJob, selectJob] = React.useState({});
     function handleClickOpen() {
       setOpen(true);
-    }  
+    }
     function handleClose() {
       setOpen(false);
     }
@@ -52,13 +52,13 @@ export default function Jobs({jobs}) {
     function handleBack() {
         setActiveStep(prevActiveStep => prevActiveStep - 1);
         scrollToTop();
-    }    
+    }
 
     return (
         <div className="jobs">
             <JobModal open={open} job={selectedJob} handleClose={handleClose} />
             <Typography variant="h4" component="h1">
-                Entry Level  Software Jobs
+                Entry Level  Software Jobs New Version
             </Typography>
             <Typography variant="h6" component="h2">
                 Found {numJobs} Jobs
