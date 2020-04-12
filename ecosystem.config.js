@@ -27,7 +27,7 @@ module.exports = {
             "host": ["206.189.148.225"],
             "ref": "origin/master",
             "repo": "https://github.com/fr0stf0x/find-jobs.git",
-            "path": "/var/www/find-jobs",
+            "path": "/var/www/html/find-jobs",
             "post-deploy": postDeployCommand,
             "env": {
                 "NODE_ENV": "production"

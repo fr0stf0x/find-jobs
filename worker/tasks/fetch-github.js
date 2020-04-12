@@ -3,7 +3,9 @@ const Redis = require('redis');
 const {promisify} = require('util');
 
 // Redis client
-const redisClient = Redis.createClient();
+const redisClient = Redis.createClient({
+    auth_pass: 'r7sYSshHaSE11VgRrIjoqD3t9sMUaiTKie3bBUZqcBuOJMXugxUnwJJq9EclSzSYCD+gc7rByhxtIBFC'
+});
 const setAsync = promisify(redisClient.set).bind(redisClient);
 
 // Fetch url
