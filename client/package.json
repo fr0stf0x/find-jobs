@@ -13,6 +13,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build-prod": "react-scripts build && scp -r build/ root@206.189.148.225:/var/www/html/find-jobs",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

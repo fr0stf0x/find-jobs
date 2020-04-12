@@ -1,26 +1,28 @@
-var postDeployCommand = "yarn && cd client && yarn && yarn run build && cd .. && pm2 startOrRestart ecosystem.config.js --env production";
+var postDeployCommand = "yarn && pm2 startOrRestart ecosystem.config.js --env production";
 
 module.exports = {
-    apps: [{
-        name: "worker",
-        script: "./worker/index.js",
-        watch: true,
-        env: {
-            "NODE_ENV": "development",
-        },
-        env_production: {
-            "NODE_ENV": "production"
+    apps: [
+        {
+            name: "worker",
+            script: "./worker/index.js",
+            watch: true,
+            env: {
+                "NODE_ENV": "development",
+            },
+            env_production: {
+                "NODE_ENV": "production"
+            }
+        }, {
+            name: "api-app",
+            script: "./api/index.js",
+            instances: 2,
+            exec_mode: "cluster"
+        // }, {
+        //     name: "react-app",
+        //     script: "serve -s client/build",
+        //     exec_mode: "fork"
         }
-    }, {
-        name: "api-app",
-        script: "./api/index.js",
-        instances: 2,
-        exec_mode: "cluster"
-    }, {
-        name: "react-app",
-        script: "serve -s client/build",
-        exec_mode: "fork"
-    }],
+    ],
     "deploy": {
         "production": {
             "user": "root",
